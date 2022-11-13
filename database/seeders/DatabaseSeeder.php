@@ -3,7 +3,10 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Category;
 use App\Models\City;
+use App\Models\Review;
+use Database\Factories\ReviewFactory;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -23,5 +26,7 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         City::factory(10)->create();
+        Category::factory(10)->create();
+        Review::factory(10)->create();
     }
 }

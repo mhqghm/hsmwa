@@ -5,17 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class City extends Model
+class Category extends Model
 {
     use HasFactory;
     protected $fillable = [
         'name',
-        'population',
-        'image_link',
     ];
 
     public function reviews()
     {
-        return $this->hasMany(Review::class);
+        return $this->belongsToMany(Review::class)->withPivot('mark', 'comment')->withTimestamps();
     }
 }
