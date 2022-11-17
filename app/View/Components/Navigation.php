@@ -24,6 +24,15 @@ class Navigation extends Component
                 'title' => 'Cities',
                 'url' => '/cities',
             ],
+            [
+                'title' => 'Categories',
+                'url' => '/categories'
+            ]
+            ,
+            [
+                'title' => 'Make review',
+                'url' => '/reviews'
+            ]
         ];
     }
 

@@ -9,6 +9,10 @@ Route::get('/', function () {
 
 Route::resource('cities', \App\Http\Controllers\CityController::class);
 
+Route::resource('categories', \App\Http\Controllers\CategoryController::class);
+
+Route::resource('reviews', \App\Http\Controllers\ReviewController::class);
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
