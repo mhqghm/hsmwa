@@ -1,0 +1,41 @@
+<x-site-layout title="Add review">
+
+    <x-form method="post" route="{{route('reviews.store')}}" title="" submit="Create">
+        <x-form-input name="city_id" type="number" label="City id" placeholder="give a title of at least 5 characters" value=""/>
+        <x-form-input name="city_mark" type="number" label="City mark" placeholder="Please put integer between 1 and 5" value=""/>
+
+        <div class="after-add-more">
+            <button class="btn btn-success add-more" type="button"><i class="glyphicon glyphicon-plus"></i> Add</button>
+        </div>
+
+        {{--        <x-form-input name="image_link" type="url" label="City image" placeholder="give a title of at least 5 characters" value=""/>--}}
+{{--        <x-form-text-area name="body" label="Actual city" placeholder="You must write something" :errors="$errors" value=""/>--}}
+    </x-form>
+
+    <div class="copy d-none">
+        <div class="border  border-dark">
+        <x-form-input name="category_reviews[category_id][]" type="number" label="category_id" placeholder="cola1" value=""/>
+        <x-form-input name="category_reviews[mark][]" type="number" label="category_id" placeholder="cola2" value=""/>
+        <x-form-input name="category_reviews[comment][]" type="text" label="category_id" placeholder="cola3" value=""/>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+
+        $(document).ready(function() {
+
+            $(".add-more").click(function(){
+                console.log("HRY");
+                var html = $(".copy").html();
+                $(".after-add-more").after(html);
+            });
+
+            $("body").on("click",".remove",function(){
+                $(this).parents(".control-group").remove();
+            });
+
+        });
+
+    </script>
+
+</x-site-layout>
