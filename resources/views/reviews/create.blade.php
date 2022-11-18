@@ -8,15 +8,13 @@
             <button class="btn btn-success add-more" type="button"><i class="glyphicon glyphicon-plus"></i> Add</button>
         </div>
 
-        {{--        <x-form-input name="image_link" type="url" label="City image" placeholder="give a title of at least 5 characters" value=""/>--}}
-{{--        <x-form-text-area name="body" label="Actual city" placeholder="You must write something" :errors="$errors" value=""/>--}}
     </x-form>
 
     <div class="copy d-none">
         <div class="border  border-dark">
         <x-form-input name="category_reviews[category_id][]" type="number" label="category_id" placeholder="cola1" value=""/>
-        <x-form-input name="category_reviews[mark][]" type="number" label="category_id" placeholder="cola2" value=""/>
-        <x-form-input name="category_reviews[comment][]" type="text" label="category_id" placeholder="cola3" value=""/>
+        <x-form-input name="category_reviews[mark][]" type="number" label="mark" placeholder="cola2" value=""/>
+        <x-form-input name="category_reviews[comment][]" type="text" label="comment" placeholder="cola3" value=""/>
         </div>
     </div>
 

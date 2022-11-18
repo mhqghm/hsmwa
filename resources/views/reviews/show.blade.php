@@ -1,4 +1,4 @@
-<x-site-layout title="Review of city {{$review->city->name}} by user {{$review->user->id}} ">
+<x-site-layout title="Review of city {{$review->city->name}} by {{$review->user->name}}">
 
     <h1 class="display-1">Population={{$review->city_mark}}</h1>
 

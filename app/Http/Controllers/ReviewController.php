@@ -7,6 +7,7 @@ use App\Models\City;
 use App\Models\Review;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ReviewController extends Controller
 {
@@ -25,7 +26,7 @@ class ReviewController extends Controller
     public function store(Request $request)
     {
         $city = City::find($request->city_id);
-        $user = User::query()->first();
+        $user = Auth::user();
 
 //        $validated = $request->validate([
 //            'name' => 'required|min:5|max:255'
@@ -38,9 +39,9 @@ class ReviewController extends Controller
 
         $category_reviews = array_map(
             null,
-            $request->category_reviews['category_id'],
-            $request->category_reviews['mark'],
-            $request->category_reviews['comment']
+            $request->category_reviews['category_id'] ?? [],
+            $request->category_reviews['mark'] ?? [],
+            $request->category_reviews['comment']  ?? []
         );
 
         foreach ($category_reviews as $category_review){

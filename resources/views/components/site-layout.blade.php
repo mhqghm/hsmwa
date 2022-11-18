@@ -22,7 +22,7 @@
 
 <x-header :title="$title"/>
 
-<div class="rounded-lg border-4 border-dashed border-gray-200 p-4 ">
+<div class="w-100">
     {{ $slot }}
 </div>
 

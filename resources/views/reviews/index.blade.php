@@ -19,7 +19,7 @@
             <tr>
                 <td>{{$review->city->name}}
                 </td>
-                <td>{{$review->user->password}}</td>
+                <td>{{$review->user->name}}</td>
                 <td>{{$review->city_mark}} </td>
                 <td>
                     <a href="{{route('reviews.show', $review->id)}}">Show</a>
