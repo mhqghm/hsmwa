@@ -28,15 +28,13 @@ class CityController extends Controller
 
     public function store(Request $request)
     {
-
-
 //        $validated = $request->validate([
 //            'name' => 'required|min:5|max:255'
 //        ]);
         City::create([
             'name' => $request->name,
             'population' => $request->population,
-            'image_link' => $request->image_link
+            'image_link' => $request->image_link,
         ]);
 
         return redirect()->route('cities.index');
@@ -45,8 +43,6 @@ class CityController extends Controller
     public function edit($id)
     {
         $city = City::find($id);
-
-
 
         return view('cities.edit', compact('city'));
     }
@@ -58,9 +54,8 @@ class CityController extends Controller
         $city->update([
             'name' => $request->name,
             'population' => $request->population,
-            'image_link' => $request->image_link
+            'image_link' => $request->image_link,
         ]);
-
 
         return redirect()->route('cities.show', $city->id);
     }

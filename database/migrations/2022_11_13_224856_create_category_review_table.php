@@ -34,6 +34,4 @@ return new class extends Migration
     {
         Schema::dropIfExists('category_review');
     }
-
-
 };

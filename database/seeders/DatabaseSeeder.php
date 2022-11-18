@@ -6,7 +6,6 @@ namespace Database\Seeders;
 use App\Models\Category;
 use App\Models\City;
 use App\Models\Review;
-use Database\Factories\ReviewFactory;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder

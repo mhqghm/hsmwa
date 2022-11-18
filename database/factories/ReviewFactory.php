@@ -19,10 +19,10 @@ class ReviewFactory extends Factory
     public function definition()
     {
         return [
-            'user_id' => function(){
+            'user_id' => function () {
                 return User::factory()->create();
             },
-            'city_id' => function() {
+            'city_id' => function () {
                 return City::factory()->create();
             },
             'city_mark' => fake()->numberBetween(1, 5),

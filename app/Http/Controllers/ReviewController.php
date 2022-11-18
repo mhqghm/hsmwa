@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\City;
 use App\Models\Review;
-use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -41,10 +40,10 @@ class ReviewController extends Controller
             null,
             $request->category_reviews['category_id'] ?? [],
             $request->category_reviews['mark'] ?? [],
-            $request->category_reviews['comment']  ?? []
+            $request->category_reviews['comment'] ?? []
         );
 
-        foreach ($category_reviews as $category_review){
+        foreach ($category_reviews as $category_review) {
             $category = Category::find($category_review[0]);
             $mark = $category_review[1];
             $comment = $category_review[2];
@@ -68,8 +67,6 @@ class ReviewController extends Controller
     {
         $review = Review::find($id);
 
-
         return view('reviews.edit', compact('review'));
     }
-
 }

@@ -27,15 +27,15 @@ class Navigation extends Component
             ],
             [
                 'title' => 'Categories',
-                'url' => '/categories'
-            ]
-            ,
+                'url' => '/categories',
+            ],
         ];
-        if (Auth::user())
+        if (Auth::user()) {
             $this->menu[] = [
                 'title' => 'Make review',
-                'url' => '/reviews'
+                'url' => '/reviews',
             ];
+        }
     }
 
     /**
