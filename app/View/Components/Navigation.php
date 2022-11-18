@@ -2,6 +2,7 @@
 
 namespace App\View\Components;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\View\Component;
 
 class Navigation extends Component
@@ -29,11 +30,12 @@ class Navigation extends Component
                 'url' => '/categories'
             ]
             ,
-            [
+        ];
+        if (Auth::user())
+            $this->menu[] = [
                 'title' => 'Make review',
                 'url' => '/reviews'
-            ]
-        ];
+            ];
     }
 
     /**

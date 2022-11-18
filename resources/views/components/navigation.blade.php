@@ -12,7 +12,6 @@
     <div class="collapse navbar-collapse" id="navbarText">
         <ul class="navbar-nav mr-auto">
             @foreach($menu as $item)
-                {{--                <a href="" class="@if($item['active']) bg-gray-900 text-white @else text-gray-300 hover:bg-gray-700 hover:text-white @endif px-3 py-2 rounded-md text-sm font-medium">{{$item['title']}}</a>--}}
                 <li class="nav-item @if($item['active'])active @else @endif">
                     <a class="nav-link" href="{{$item['url']}}">{{$item['title']}} </a>
                 </li>
@@ -29,9 +28,35 @@
             {{--                <a class="nav-link" href="#">Pricing</a>--}}
             {{--            </li>--}}
         </ul>
-        <span class="navbar-text">
-            TODO auth
-        </span>
+        <div class="flex-grow-1">
+        </div>
+        <div>
+            @auth
+                <a>
+                    Hello {{\Illuminate\Support\Facades\Auth::user()->name}}!
+                </a>
+            @endauth
+        </div>
+        <div class="mx-4">
+            @auth
+                <link href='https://css.gg/log-out.css' rel='stylesheet'>
+                <a href="{{ route('logout') }}"
+                   onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                    <i class="gg-log-out"></i>
+                </a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    {{ csrf_field() }}
+                </form>
+            @endauth
+            @guest
+                <a class="btn" href="{{route('login')}}">
+                    Login
+                </a>
+                <a class="btn" href="{{route('register')}}">
+                    Register
+                </a>
+            @endguest
+        </div>
     </div>
 </nav>
 
