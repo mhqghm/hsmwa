@@ -35,6 +35,7 @@ class CityController extends Controller
             'name' => $request->name,
             'population' => $request->population,
             'image_link' => $request->image_link,
+            'description' => $request->description,
         ]);
 
         return redirect()->route('cities.index');
@@ -55,6 +56,7 @@ class CityController extends Controller
             'name' => $request->name,
             'population' => $request->population,
             'image_link' => $request->image_link,
+            'description' => $request->description,
         ]);
 
         return redirect()->route('cities.show', $city->id);
