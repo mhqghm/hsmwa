@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('image_link');
             $table->integer('population');
+            $table->string('description');
             $table->timestamps();
         });
     }

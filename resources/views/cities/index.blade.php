@@ -12,10 +12,10 @@
                 <div class="card my-2 h-100">
                     <img class="card-img-top vh-40" src="{{$city->image_link}}">
                     <div class="card-body">
+
                         <h5 class="card-title text-center">{{$city->name}}</h5>
-                        <p class="card-text">Country KEk Population {{$city->population}}</p>
-                        <p class="card-text">Great city sadasdasd a asdas sad @appendsdasdas</p>
-                        <p class="card-text">Best for KEK 5, LOL 4 from 105 reviews</p>
+                        <p class="card-text">City population {{$city->population}}</p>
+                        <p class="card-text">{{$city->description}}</p>
                         <a href="{{route('cities.show', $city->id)}}" class="stretched-link">Details</a>
                     </div>
 {{--                    <div class="card-footer">--}}

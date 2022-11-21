@@ -1,9 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="d-flex flex-column align-items-center">
         <p class="font-weight-bold bold my-0">City Rater</p>
-        <p class="font-weight-light small del my-0">
-            <del>califica a tu madre</del>
-        </p>
     </div>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
             aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">

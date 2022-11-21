@@ -13,6 +13,7 @@ class City extends Model
         'name',
         'population',
         'image_link',
+        'description'
     ];
 
     public function reviews()

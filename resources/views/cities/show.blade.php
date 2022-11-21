@@ -13,6 +13,8 @@
 
     <h1 class="display-5 mx-auto">Population={{$city->population}}</h1>
 
+    <h1 class="display-5 mx-auto">{{$city->description}}</h1>
+
     <div class="list-group">
         @foreach ($city->reviews as $review)
             <p class="list-group-item list-group-item-action">

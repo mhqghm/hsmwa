@@ -20,6 +20,7 @@ class CityFactory extends Factory
             'name' => fake()->unique()->city(),
             'population' => fake()->randomNumber(5, true),
             'image_link' => fake()->imageUrl($width = 40, $height = 20),
+            'description' => fake()->text(80)
         ];
     }
 }

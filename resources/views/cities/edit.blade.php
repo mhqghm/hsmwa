@@ -4,9 +4,10 @@
         @method('put')
 
 
-        <x-form-input name="name" type="text" label="City Title" placeholder="give a title of at least 5 characters" value="{{$city->name}}"/>
-        <x-form-input name="population" type="number" label="City population" placeholder="give a title of at least 5 characters" value="{{$city->population}}"/>
-        <x-form-input name="image_link" type="url" label="City image" placeholder="give a title of at least 5 characters" value="{{$city->image_link}}"/>
+        <x-form-input name="name" type="text" label="City Title" placeholder="put city name" value="{{$city->name}}"/>
+        <x-form-input name="population" type="number" label="City population" placeholder="put population of city" value="{{$city->population}}"/>
+        <x-form-input name="image_link" type="url" label="City image" placeholder="insert image url" value="{{$city->image_link}}"/>
+        <x-form-input name="description" type="text" label="City description" placeholder="provide short description of a city" value="{{$city->description}}"/>
 
     </x-form>
 
