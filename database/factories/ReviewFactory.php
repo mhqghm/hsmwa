@@ -18,12 +18,13 @@ class ReviewFactory extends Factory
      */
     public function definition()
     {
+
         return [
             'user_id' => function () {
-                return User::factory()->create();
+                return User::all()->random()->id;
             },
             'city_id' => function () {
-                return City::factory()->create();
+                return City::all()->random()->id;
             },
             'city_mark' => fake()->numberBetween(1, 5),
 
