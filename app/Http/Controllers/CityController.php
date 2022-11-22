@@ -28,15 +28,13 @@ class CityController extends Controller
 
     public function store(Request $request)
     {
-//        $validated = $request->validate([
-//            'name' => 'required|min:5|max:255'
-//        ]);
-        City::create([
-            'name' => $request->name,
-            'population' => $request->population,
-            'image_link' => $request->image_link,
-            'description' => $request->description,
+        $validated = $request->validate([
+            'name' => 'required|string|min:5|max:255',
+            'population' => 'required|integer',
+            'image_link' => 'required|url|min:5|max:255',
+            'description' => 'required|string|min:5|max:255',
         ]);
+        City::create($validated);
 
         return redirect()->route('cities.index');
     }
