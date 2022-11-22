@@ -34,6 +34,7 @@ class CityController extends Controller
             'image_link' => 'required|url|min:5|max:255',
             'description' => 'required|string|min:5|max:255',
         ]);
+
         City::create($validated);
 
         return redirect()->route('cities.index');
@@ -49,6 +50,13 @@ class CityController extends Controller
     public function update($id, Request $request)
     {
         $city = City::find($id);
+
+        $request->validate([
+            'name' => 'required|string|min:5|max:255',
+            'population' => 'required|integer',
+            'image_link' => 'required|url|min:5|max:255',
+            'description' => 'required|string|min:5|max:255',
+        ]);
 
         $city->update([
             'name' => $request->name,
