@@ -1,11 +1,14 @@
 <x-site-layout title="{{$city->name}}">
 
 
-    <div class="d-flex flex-row-reverse">
-        <a class="btn btn-primary" href="{{route('cities.edit', $city->id)}}">
-            Edit
-        </a>
-    </div>
+    @if(Auth::user()->is_admin)
+        <div class="d-flex flex-row-reverse">
+            <a class="btn btn-primary" href="{{route('cities.edit', $city->id)}}">
+                Edit
+            </a>
+        </div>
+    @endif
+
 
     <div class="d-flex justify-content-center">
         <img src="{{$city->image_link}}" class="">

@@ -1,10 +1,12 @@
 <x-site-layout title="List of cities on this site">
 
-    <div class="d-flex flex-row-reverse">
-        <a class="btn btn-primary" href="{{route('categories.create')}}">
-            Add a category
-        </a>
-    </div>
+    @if(Auth::user()->is_admin)
+        <div class="d-flex flex-row-reverse">
+            <a class="btn btn-primary" href="{{route('categories.create')}}">
+                Add a category
+            </a>
+        </div>
+    @endif
 
     <table class="table table-hover" style="max-width:80%;margin-left: auto;margin-right: auto;">
         <thead>
@@ -20,7 +22,9 @@
                 </td>
                 <td>
                     <a href="{{route('categories.show', $category->id)}}">Show</a>
-                    <a href="{{route('categories.edit', $category->id)}}">Edit</a>
+                    @if(Auth::user()->is_admin)
+                        <a href="{{route('categories.edit', $category->id)}}">Edit</a>
+                    @endif
                 </td>
             </tr>
         @endforeach

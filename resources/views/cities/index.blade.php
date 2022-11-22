@@ -1,10 +1,13 @@
 <x-site-layout title="List of cities on this site">
 
-    <div class="d-flex flex-row-reverse">
-        <a class="btn btn-primary" href="{{route('cities.create')}}">
-            Add a city
-        </a>
-    </div>
+
+    @if(Auth::user()->is_admin)
+        <div class="d-flex flex-row-reverse">
+            <a class="btn btn-primary" href="{{route('cities.create')}}">
+                Add a city
+            </a>
+        </div>
+    @endif
 
     <div class="row row-cols-1 row-cols-md-3 g-4">
         @foreach ($cities as $city)
@@ -18,9 +21,6 @@
                         <p class="card-text">{{$city->description}}</p>
                         <a href="{{route('cities.show', $city->id)}}" class="stretched-link">Details</a>
                     </div>
-{{--                    <div class="card-footer">--}}
-{{--                        <small class="text-muted">Last updated 3 mins ago</small>--}}
-{{--                    </div>--}}
                 </div>
             </div>
         @endforeach

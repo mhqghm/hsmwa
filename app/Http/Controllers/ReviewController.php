@@ -26,10 +26,7 @@ class ReviewController extends Controller
     {
         $city = City::find($request->city_id);
         $user = Auth::user();
-
-//        $validated = $request->validate([
-//            'name' => 'required|min:5|max:255'
-//        ]);
+        
         $review = new Review();
         $review->city_mark = $request->city_mark;
         $review->city()->associate($city);
