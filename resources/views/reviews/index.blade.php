@@ -1,4 +1,4 @@
-<x-site-layout title="Admin panel of reviews">
+<x-site-layout title="List of all reviews">
 
     <div class="d-flex flex-row-reverse">
         <a class="btn btn-primary" href="{{route('reviews.create')}}">
@@ -23,7 +23,9 @@
                 <td>{{$review->city_mark}} </td>
                 <td>
                     <a href="{{route('reviews.show', $review->id)}}">Show</a>
-                    <a href="{{route('reviews.edit', $review->id)}}">Edit</a>
+                    @if($review->canEdit())
+                        <a href="{{route('reviews.edit', $review->id)}}">Edit</a>
+                    @endif
                 </td>
             </tr>
         @endforeach

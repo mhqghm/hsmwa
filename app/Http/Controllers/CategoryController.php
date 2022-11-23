@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Review;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -57,5 +58,15 @@ class CategoryController extends Controller
 
 
         return redirect()->route('categories.show', $category->id);
+    }
+
+
+    public function destroy($id, Request $request)
+    {
+        $category = Category::find($id);
+
+        $category->delete();
+
+        return redirect()->route('categories.index');
     }
 }

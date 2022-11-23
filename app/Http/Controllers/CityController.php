@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\City;
+use App\Models\Review;
 use Illuminate\Http\Request;
 
 class CityController extends Controller
@@ -66,5 +67,14 @@ class CityController extends Controller
         ]);
 
         return redirect()->route('cities.show', $city->id);
+    }
+
+    public function destroy($id, Request $request)
+    {
+        $city = City::find($id);
+
+        $city->delete();
+
+        return redirect()->route('cities.index');
     }
 }
