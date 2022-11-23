@@ -11,7 +11,7 @@
 
     </x-form>
 
-    @if(Auth::user()->is_admin)
+    @if(Auth::check() && Auth::user()->is_admin)
         <x-form method="post" route="{{route('cities.destroy', $city->id)}}" title="" submit="Delete">
             @method('delete')
         </x-form>

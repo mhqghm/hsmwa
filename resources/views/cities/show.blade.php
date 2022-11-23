@@ -1,7 +1,7 @@
 <x-site-layout title="{{$city->name}}">
 
 
-    @if(Auth::user()->is_admin)
+    @if(Auth::check() && Auth::user()->is_admin)
         <div class="d-flex flex-row-reverse">
             <a class="btn btn-primary" href="{{route('cities.edit', $city->id)}}">
                 Edit

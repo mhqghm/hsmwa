@@ -22,9 +22,7 @@ Route::middleware('auth')->group(function () {
 
 // PUBLIC ROUTES =========================================================
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [\App\Http\Controllers\WelcomeController::class, 'index']);
 
 Route::resource('cities', \App\Http\Controllers\CityController::class)->only('index', 'show');
 

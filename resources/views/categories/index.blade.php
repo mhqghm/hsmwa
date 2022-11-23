@@ -1,6 +1,6 @@
 <x-site-layout title="List of cities on this site">
 
-    @if(Auth::user()->is_admin)
+    @if(Auth::check() && Auth::user()->is_admin)
         <div class="d-flex flex-row-reverse">
             <a class="btn btn-primary" href="{{route('categories.create')}}">
                 Add a category
@@ -22,7 +22,7 @@
                 </td>
                 <td>
                     <a href="{{route('categories.show', $category->id)}}">Show</a>
-                    @if(Auth::user()->is_admin)
+                    @if(Auth::check() &&  Auth::user()->is_admin)
                         <a href="{{route('categories.edit', $category->id)}}">Edit</a>
                     @endif
                 </td>
