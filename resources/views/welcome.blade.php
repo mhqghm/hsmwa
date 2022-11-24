@@ -14,7 +14,10 @@
                             src="{{$city->image_link}}"
                             style="height: 20vh" alt="quixote">
                         <p class="mb-1">{{$city->description}}.</p>
-                        <small class="text-muted">Show</small>
+                        <a href="{{route('cities.show', $city->id)}}">
+                            <small class=" text-muted">
+                                Show</small>
+                        </a>
                     </li>
                 @endforeach
             </ul>
