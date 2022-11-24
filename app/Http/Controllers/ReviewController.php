@@ -19,7 +19,9 @@ class ReviewController extends Controller
 
     public function create()
     {
-        return view('reviews.create');
+        $cities = City::all();
+        $categories = Category::all();
+        return view('reviews.create', compact('cities', 'categories'));
     }
 
     public function store(Request $request)
